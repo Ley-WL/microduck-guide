@@ -1,0 +1,1833 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "label": "躯干主体",
+      "file": "models/01.stl",
+      "sources": [
+        "seeed_bearing__configuration__22x16x4",
+        "right_shell",
+        "banana_pcb_locker",
+        "trunk_base",
+        "xl330",
+        "power_support",
+        "np_f970",
+        "xl330",
+        "left_shell",
+        "seeed_bearing__configuration__22x16x4"
+      ],
+      "components": [
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 0,
+          "count": 62910,
+          "center": [
+            6.000000238418579,
+            17.50000023841858,
+            -2.999999850988388
+          ],
+          "size": [
+            21.999999523162842,
+            21.999999523162842,
+            4.000000298023224
+          ]
+        },
+        {
+          "key": "right_shell",
+          "occurrence": 1,
+          "label": "右壳",
+          "kind": "打印件",
+          "start": 62910,
+          "count": 62910,
+          "center": [
+            -5.9489288330078125,
+            -16.382243677973747,
+            21.180036321282387
+          ],
+          "size": [
+            80.89785766601562,
+            31.764489084482193,
+            41.69266936182976
+          ]
+        },
+        {
+          "key": "banana_pcb_locker",
+          "occurrence": 1,
+          "label": "香蕉形PCB锁扣",
+          "kind": "打印件",
+          "start": 125820,
+          "count": 4164,
+          "center": [
+            -30.399998664855957,
+            -9.5367431640625e-07,
+            34.7785005569458
+          ],
+          "size": [
+            3.8000011444091797,
+            54.050065994262695,
+            6.652364730834961
+          ]
+        },
+        {
+          "key": "trunk_base",
+          "occurrence": 1,
+          "label": "躯干底座",
+          "kind": "打印件",
+          "start": 129984,
+          "count": 11094,
+          "center": [
+            -1.0,
+            0.0,
+            0.5000001788139343
+          ],
+          "size": [
+            36.0,
+            57.0,
+            3.0000005960464478
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 20 · 左髋 · 偏航，转腿",
+          "kind": "外购 / 占位",
+          "start": 141078,
+          "count": 12378,
+          "center": [
+            -1.5,
+            17.5,
+            11.5
+          ],
+          "size": [
+            34.0,
+            20.0,
+            29.0
+          ],
+          "servoId": 20,
+          "servoPart": "左髋",
+          "servoAction": "偏航，转腿"
+        },
+        {
+          "key": "power_support",
+          "occurrence": 1,
+          "label": "电源支架",
+          "kind": "打印件",
+          "start": 153456,
+          "count": 38496,
+          "center": [
+            -22.499999523162842,
+            0.0,
+            -2.3227405548095703
+          ],
+          "size": [
+            17.000000953674316,
+            54.5,
+            83.48978042602539
+          ]
+        },
+        {
+          "key": "np_f970",
+          "occurrence": 1,
+          "label": "NP-F550 / F570 电池外形",
+          "kind": "外购 / 占位",
+          "start": 191952,
+          "count": 62910,
+          "center": [
+            -35.95439434051514,
+            -0.003909111022949219,
+            -3.854228973388672
+          ],
+          "size": [
+            21.757081985473633,
+            38.60848045349121,
+            71.05099487304688
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 2,
+          "label": "舵机 ID 10 · 右髋 · 偏航，转腿",
+          "kind": "外购 / 占位",
+          "start": 254862,
+          "count": 12378,
+          "center": [
+            -1.5,
+            -17.5,
+            11.5
+          ],
+          "size": [
+            34.0,
+            20.0,
+            29.0
+          ],
+          "servoId": 10,
+          "servoPart": "右髋",
+          "servoAction": "偏航，转腿"
+        },
+        {
+          "key": "left_shell",
+          "occurrence": 1,
+          "label": "左壳",
+          "kind": "打印件",
+          "start": 267240,
+          "count": 62910,
+          "center": [
+            -5.945032119750977,
+            14.907243609428406,
+            21.10260796546936
+          ],
+          "size": [
+            80.89006423950195,
+            33.714489221572876,
+            41.69052076339722
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 2,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 330150,
+          "count": 62910,
+          "center": [
+            6.000000238418579,
+            -17.49999976158142,
+            -2.999999850988388
+          ],
+          "size": [
+            21.999999523162842,
+            22.000000476837158,
+            4.000000298023224
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "左髋yaw-roll",
+      "file": "models/02.stl",
+      "sources": [
+        "yaw2roll",
+        "xl330",
+        "seeed_bearing__configuration__22x16x4",
+        "bearing_roll"
+      ],
+      "components": [
+        {
+          "key": "yaw2roll",
+          "occurrence": 1,
+          "label": "偏航转横滚",
+          "kind": "打印件",
+          "start": 0,
+          "count": 37212,
+          "center": [
+            4.400000095367432,
+            17.50000023841858,
+            -12.25000011920929
+          ],
+          "size": [
+            25.800002098083496,
+            22.999999523162842,
+            20.49999976158142
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 21 · 左髋 · 横滚，侧向摆腿",
+          "kind": "外购 / 占位",
+          "start": 37212,
+          "count": 12378,
+          "center": [
+            6.0,
+            17.5,
+            -25.0
+          ],
+          "size": [
+            29.0,
+            20.0,
+            34.0
+          ],
+          "servoId": 21,
+          "servoPart": "左髋",
+          "servoAction": "横滚，侧向摆腿"
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 49590,
+          "count": 62910,
+          "center": [
+            20.5,
+            17.50000023841858,
+            -17.5
+          ],
+          "size": [
+            4.0,
+            21.999999523162842,
+            22.0
+          ]
+        },
+        {
+          "key": "bearing_roll",
+          "occurrence": 1,
+          "label": "横滚轴承压盖",
+          "kind": "打印件",
+          "start": 112500,
+          "count": 7260,
+          "center": [
+            17.0,
+            17.499998807907104,
+            -22.00000035762787
+          ],
+          "size": [
+            3.0,
+            22.999998569488525,
+            39.99999928474426
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "左髋roll",
+      "file": "models/03.stl",
+      "sources": [
+        "seeed_bearing__configuration__22x16x4",
+        "hip_l"
+      ],
+      "components": [
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 0,
+          "count": 62910,
+          "center": [
+            4.000000238418579,
+            40.5,
+            -17.5
+          ],
+          "size": [
+            21.999999523162842,
+            4.0,
+            22.0
+          ]
+        },
+        {
+          "key": "hip_l",
+          "occurrence": 1,
+          "label": "髋部左",
+          "kind": "打印件",
+          "start": 62910,
+          "count": 62910,
+          "center": [
+            11.750000953674316,
+            24.225025177001953,
+            -17.500000476837158
+          ],
+          "size": [
+            34.50000190734863,
+            32.450050354003906,
+            18.999999046325684
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "左大腿",
+      "file": "models/04.stl",
+      "sources": [
+        "upper_leg_left",
+        "xl330",
+        "upper_leg_rigidity_plate",
+        "seeed_bearing__configuration__22x16x4",
+        "xl330"
+      ],
+      "components": [
+        {
+          "key": "upper_leg_left",
+          "occurrence": 1,
+          "label": "左上腿",
+          "kind": "打印件",
+          "start": 0,
+          "count": 36750,
+          "center": [
+            -14.3008451461792,
+            56.5,
+            -27.86229181289673
+          ],
+          "size": [
+            60.99661445617676,
+            28.0,
+            47.65941905975342
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 23 · 左膝 · 屈伸",
+          "kind": "外购 / 占位",
+          "start": 36750,
+          "count": 12378,
+          "center": [
+            -31.777099609375,
+            55.0,
+            -32.0
+          ],
+          "size": [
+            20.0,
+            29.0,
+            34.0
+          ],
+          "servoId": 23,
+          "servoPart": "左膝",
+          "servoAction": "屈伸"
+        },
+        {
+          "key": "upper_leg_rigidity_plate",
+          "occurrence": 1,
+          "label": "上腿加固板",
+          "kind": "打印件",
+          "start": 49128,
+          "count": 10800,
+          "center": [
+            -14.029798030853271,
+            43.0,
+            -27.998241424560547
+          ],
+          "size": [
+            58.05773639678955,
+            1.0,
+            44.996482849121094
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 59928,
+          "count": 62910,
+          "center": [
+            -31.777099609375,
+            40.5,
+            -39.5
+          ],
+          "size": [
+            22.0,
+            4.0,
+            22.0
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 2,
+          "label": "舵机 ID 22 · 左髋 · 俯仰，前后摆腿",
+          "kind": "外购 / 占位",
+          "start": 122838,
+          "count": 12378,
+          "center": [
+            -3.5,
+            55.0,
+            -17.5
+          ],
+          "size": [
+            34.0,
+            29.0,
+            20.0
+          ],
+          "servoId": 22,
+          "servoPart": "左髋",
+          "servoAction": "俯仰，前后摆腿"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "左小腿",
+      "file": "models/05.stl",
+      "sources": [
+        "leg",
+        "xl330"
+      ],
+      "components": [
+        {
+          "key": "leg",
+          "occurrence": 1,
+          "label": "腿部",
+          "kind": "打印件",
+          "start": 0,
+          "count": 44328,
+          "center": [
+            -31.777101516723633,
+            36.47500038146973,
+            -58.500014305114746
+          ],
+          "size": [
+            20.000003814697266,
+            7.950000762939453,
+            58.00000190734863
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 24 · 左踝 · 脚踝",
+          "kind": "外购 / 占位",
+          "start": 44328,
+          "count": 12378,
+          "center": [
+            -31.777099609375,
+            50.0,
+            -74.0
+          ],
+          "size": [
+            20.0,
+            29.0,
+            34.0
+          ],
+          "servoId": 24,
+          "servoPart": "左踝",
+          "servoAction": "脚踝"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "左踝脚",
+      "file": "models/06.stl",
+      "sources": [
+        "sole_left",
+        "foot_left",
+        "seeed_bearing__configuration_default",
+        "ankle_left"
+      ],
+      "components": [
+        {
+          "key": "sole_left",
+          "occurrence": 1,
+          "label": "左脚底",
+          "kind": "打印件",
+          "start": 0,
+          "count": 47364,
+          "center": [
+            -24.77709972858429,
+            49.80468273162842,
+            -100.07269668579102
+          ],
+          "size": [
+            53.99999976158142,
+            41.09853553771973,
+            12.907356262207031
+          ]
+        },
+        {
+          "key": "foot_left",
+          "occurrence": 1,
+          "label": "左脚",
+          "kind": "打印件",
+          "start": 47364,
+          "count": 59766,
+          "center": [
+            -24.77709949016571,
+            49.92356300354004,
+            -96.07352066040039
+          ],
+          "size": [
+            54.00000023841858,
+            40.085506439208984,
+            16.909019470214844
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration_default",
+          "occurrence": 1,
+          "label": "轴承 10×15×3 mm",
+          "kind": "外购 / 占位",
+          "start": 107130,
+          "count": 62910,
+          "center": [
+            -31.777099609375,
+            33.79999923706055,
+            -81.5
+          ],
+          "size": [
+            15.0,
+            3.0,
+            15.0
+          ]
+        },
+        {
+          "key": "ankle_left",
+          "occurrence": 1,
+          "label": "脚踝左",
+          "kind": "打印件",
+          "start": 170040,
+          "count": 14934,
+          "center": [
+            -28.190307140350342,
+            49.9090690612793,
+            -85.05000305175781
+          ],
+          "size": [
+            36.500000953674316,
+            39.48914337158203,
+            25.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "颈根",
+      "file": "models/07.stl",
+      "sources": [
+        "neck",
+        "xl330",
+        "xl330",
+        "neck"
+      ],
+      "components": [
+        {
+          "key": "neck",
+          "occurrence": 1,
+          "label": "颈部",
+          "kind": "打印件",
+          "start": 0,
+          "count": 4404,
+          "center": [
+            26.0,
+            -12.5,
+            57.42150115966797
+          ],
+          "size": [
+            20.0,
+            2.0,
+            11.0
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 30 · 颈部 · 俯仰",
+          "kind": "外购 / 占位",
+          "start": 4404,
+          "count": 12378,
+          "center": [
+            26.0,
+            0.0,
+            39.92150020599365
+          ],
+          "size": [
+            20.0,
+            29.0,
+            34.00000190734863
+          ],
+          "servoId": 30,
+          "servoPart": "颈部",
+          "servoAction": "俯仰"
+        },
+        {
+          "key": "xl330",
+          "occurrence": 2,
+          "label": "舵机 ID 31 · 头部 · 俯仰，点头",
+          "kind": "外购 / 占位",
+          "start": 16782,
+          "count": 12378,
+          "center": [
+            26.0,
+            0.0,
+            74.92150115966797
+          ],
+          "size": [
+            20.0,
+            29.0,
+            34.0
+          ],
+          "servoId": 31,
+          "servoPart": "头部",
+          "servoAction": "俯仰，点头"
+        },
+        {
+          "key": "neck",
+          "occurrence": 2,
+          "label": "颈部",
+          "kind": "打印件",
+          "start": 29160,
+          "count": 4404,
+          "center": [
+            26.0,
+            12.5,
+            57.42150115966797
+          ],
+          "size": [
+            20.0,
+            2.0,
+            11.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "label": "颈俯仰",
+      "file": "models/08.stl",
+      "sources": [
+        "neck_pitch",
+        "seeed_bearing__configuration__22x16x4"
+      ],
+      "components": [
+        {
+          "key": "neck_pitch",
+          "occurrence": 1,
+          "label": "颈部俯仰",
+          "kind": "打印件",
+          "start": 0,
+          "count": 21360,
+          "center": [
+            26.0,
+            0.0,
+            87.2680435180664
+          ],
+          "size": [
+            18.0,
+            35.0,
+            27.693115234375
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 21360,
+          "count": 62910,
+          "center": [
+            26.0,
+            0.0,
+            101.214599609375
+          ],
+          "size": [
+            22.0,
+            22.0,
+            4.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "label": "头yaw-roll",
+      "file": "models/09.stl",
+      "sources": [
+        "yaw_roll_motion",
+        "xl330",
+        "seeed_bearing__configuration__22x16x4",
+        "seeed_bearing__configuration__22x16x4"
+      ],
+      "components": [
+        {
+          "key": "yaw_roll_motion",
+          "occurrence": 1,
+          "label": "偏航横滚运动",
+          "kind": "打印件",
+          "start": 0,
+          "count": 17442,
+          "center": [
+            26.049999713897705,
+            -7.5,
+            117.86459732055664
+          ],
+          "size": [
+            35.90000057220459,
+            34.0,
+            22.49999237060547
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 32 · 头部 · 偏航，左右转头",
+          "kind": "外购 / 占位",
+          "start": 17442,
+          "count": 12378,
+          "center": [
+            26.0,
+            -7.5,
+            115.61459732055664
+          ],
+          "size": [
+            20.0,
+            34.0,
+            28.99999237060547
+          ],
+          "servoId": 32,
+          "servoPart": "头部",
+          "servoAction": "偏航，左右转头"
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 29820,
+          "count": 62910,
+          "center": [
+            7.999999761581421,
+            0.0,
+            115.6146011352539
+          ],
+          "size": [
+            4.000000476837158,
+            22.0,
+            22.0
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 2,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 92730,
+          "count": 62910,
+          "center": [
+            42.0,
+            0.0,
+            115.6146011352539
+          ],
+          "size": [
+            4.0,
+            22.0,
+            22.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "label": "头部总成",
+      "file": "models/10.stl",
+      "sources": [
+        "lens",
+        "face_part",
+        "xl330",
+        "jaw_soft",
+        "motor_support",
+        "top_head_shell",
+        "xl330",
+        "seeed_bearing__configuration_default",
+        "elec_rpi_robot_hat_pcb",
+        "soft_mouth_top",
+        "noenoeil",
+        "jaw",
+        "bottom_head_shell",
+        "m12_lens_holder",
+        "pcb__raspberry_pi_zero_2_w",
+        "speaker"
+      ],
+      "components": [
+        {
+          "key": "lens",
+          "occurrence": 1,
+          "label": "镜头",
+          "kind": "外购 / 占位",
+          "start": 0,
+          "count": 5616,
+          "center": [
+            80.44000244140625,
+            -0.09137773513793945,
+            131.11459732055664
+          ],
+          "size": [
+            18.919998168945312,
+            16.9399995803833,
+            16.93999481201172
+          ]
+        },
+        {
+          "key": "face_part",
+          "occurrence": 1,
+          "label": "面部零件",
+          "kind": "打印件",
+          "start": 5616,
+          "count": 34236,
+          "center": [
+            75.1500015258789,
+            -0.09137725830078125,
+            132.6278419494629
+          ],
+          "size": [
+            12.5,
+            87.65069580078125,
+            44.626487731933594
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 34 · 嘴部 · 开合",
+          "kind": "外购 / 占位",
+          "start": 39852,
+          "count": 12378,
+          "center": [
+            33.59999942779541,
+            25.5,
+            118.61459732055664
+          ],
+          "size": [
+            33.99999809265137,
+            29.0,
+            19.99999237060547
+          ],
+          "servoId": 34,
+          "servoPart": "嘴部",
+          "servoAction": "开合"
+        },
+        {
+          "key": "jaw_soft",
+          "occurrence": 1,
+          "label": "软下巴",
+          "kind": "打印件",
+          "start": 52230,
+          "count": 20178,
+          "center": [
+            67.71790885925293,
+            -1.9073486328125e-06,
+            104.08565902709961
+          ],
+          "size": [
+            32.233951568603516,
+            87.67374038696289,
+            8.437583923339844
+          ]
+        },
+        {
+          "key": "motor_support",
+          "occurrence": 1,
+          "label": "电机支架",
+          "kind": "打印件",
+          "start": 72408,
+          "count": 10848,
+          "center": [
+            25.200000643730164,
+            -2.75,
+            120.91460418701172
+          ],
+          "size": [
+            54.2000048160553,
+            73.50000762939453,
+            18.800003051757812
+          ]
+        },
+        {
+          "key": "top_head_shell",
+          "occurrence": 1,
+          "label": "头部上壳",
+          "kind": "打印件",
+          "start": 83256,
+          "count": 48360,
+          "center": [
+            30.945012092590332,
+            7.43865966796875e-05,
+            134.28131484985352
+          ],
+          "size": [
+            122.69002342224121,
+            91.75945663452148,
+            46.336143493652344
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 2,
+          "label": "舵机 ID 33 · 头部 · 横滚，左右歪头",
+          "kind": "外购 / 占位",
+          "start": 131616,
+          "count": 12378,
+          "center": [
+            -6.399999618530273,
+            -7.5,
+            115.6146011352539
+          ],
+          "size": [
+            29.0,
+            34.0,
+            20.0
+          ],
+          "servoId": 33,
+          "servoPart": "头部",
+          "servoAction": "横滚，左右歪头"
+        },
+        {
+          "key": "seeed_bearing__configuration_default",
+          "occurrence": 1,
+          "label": "轴承 10×15×3 mm",
+          "kind": "外购 / 占位",
+          "start": 143994,
+          "count": 62910,
+          "center": [
+            26.09999942779541,
+            -38.5,
+            118.8145980834961
+          ],
+          "size": [
+            14.999998092651367,
+            3.0,
+            15.0
+          ]
+        },
+        {
+          "key": "elec_rpi_robot_hat_pcb",
+          "occurrence": 1,
+          "label": "Robot HAT 电路板",
+          "kind": "外购 / 占位",
+          "start": 206904,
+          "count": 56568,
+          "center": [
+            59.579999923706055,
+            0.0011005401611328125,
+            131.05709838867188
+          ],
+          "size": [
+            0.8400001525878906,
+            65.02500534057617,
+            30.024993896484375
+          ]
+        },
+        {
+          "key": "soft_mouth_top",
+          "occurrence": 1,
+          "label": "软嘴顶部",
+          "kind": "打印件",
+          "start": 263472,
+          "count": 23610,
+          "center": [
+            67.96525573730469,
+            1.71661376953125e-05,
+            108.08121871948242
+          ],
+          "size": [
+            32.56504821777344,
+            87.82202529907227,
+            3.2762069702148438
+          ]
+        },
+        {
+          "key": "noenoeil",
+          "occurrence": 1,
+          "label": "眼睛",
+          "kind": "打印件",
+          "start": 287082,
+          "count": 2952,
+          "center": [
+            84.6500015258789,
+            -0.09137773513793945,
+            131.11459732055664
+          ],
+          "size": [
+            9.5,
+            29.999999046325684,
+            29.99999237060547
+          ]
+        },
+        {
+          "key": "jaw",
+          "occurrence": 1,
+          "label": "下巴",
+          "kind": "打印件",
+          "start": 290034,
+          "count": 29754,
+          "center": [
+            51.45524597167969,
+            0.0,
+            112.8907699584961
+          ],
+          "size": [
+            68.71049499511719,
+            91.41584777832031,
+            29.447662353515625
+          ]
+        },
+        {
+          "key": "bottom_head_shell",
+          "occurrence": 1,
+          "label": "头部下壳",
+          "kind": "打印件",
+          "start": 319788,
+          "count": 62910,
+          "center": [
+            27.97414207458496,
+            3.62396240234375e-05,
+            108.7464714050293
+          ],
+          "size": [
+            116.7482795715332,
+            91.76302719116211,
+            20.136253356933594
+          ]
+        },
+        {
+          "key": "m12_lens_holder",
+          "occurrence": 1,
+          "label": "M12镜头座",
+          "kind": "打印件",
+          "start": 382698,
+          "count": 32976,
+          "center": [
+            71.08000183105469,
+            -0.09137773513793945,
+            131.11459732055664
+          ],
+          "size": [
+            14.800003051757812,
+            24.000000953674316,
+            15.999992370605469
+          ]
+        },
+        {
+          "key": "pcb__raspberry_pi_zero_2_w",
+          "occurrence": 1,
+          "label": "主控板占位模型（Pi Zero 外形）",
+          "kind": "外购 / 占位",
+          "start": 415674,
+          "count": 62910,
+          "center": [
+            68.11000061035156,
+            -0.011379241943359375,
+            131.04960250854492
+          ],
+          "size": [
+            1.600006103515625,
+            65.0,
+            30.00000762939453
+          ]
+        },
+        {
+          "key": "speaker",
+          "occurrence": 1,
+          "label": "扬声器",
+          "kind": "外购 / 占位",
+          "start": 478584,
+          "count": 36,
+          "center": [
+            -5.422599792480469,
+            0.7140007019042969,
+            129.11459732055664
+          ],
+          "size": [
+            25.0,
+            35.0,
+            6.999992370605469
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "label": "右髋yaw-roll",
+      "file": "models/11.stl",
+      "sources": [
+        "yaw2roll",
+        "xl330",
+        "bearing_roll",
+        "seeed_bearing__configuration__22x16x4"
+      ],
+      "components": [
+        {
+          "key": "yaw2roll",
+          "occurrence": 1,
+          "label": "偏航转横滚",
+          "kind": "打印件",
+          "start": 0,
+          "count": 37212,
+          "center": [
+            4.400000095367432,
+            -17.50000023841858,
+            -12.25000011920929
+          ],
+          "size": [
+            25.800002098083496,
+            22.999999523162842,
+            20.49999976158142
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 11 · 右髋 · 横滚，侧向摆腿",
+          "kind": "外购 / 占位",
+          "start": 37212,
+          "count": 12378,
+          "center": [
+            6.0,
+            -17.5,
+            -25.0
+          ],
+          "size": [
+            29.0,
+            20.0,
+            34.0
+          ],
+          "servoId": 11,
+          "servoPart": "右髋",
+          "servoAction": "横滚，侧向摆腿"
+        },
+        {
+          "key": "bearing_roll",
+          "occurrence": 1,
+          "label": "横滚轴承压盖",
+          "kind": "打印件",
+          "start": 49590,
+          "count": 7260,
+          "center": [
+            17.0,
+            -17.500000715255737,
+            -22.00000035762787
+          ],
+          "size": [
+            3.0,
+            22.999998569488525,
+            39.99999928474426
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 56850,
+          "count": 62910,
+          "center": [
+            20.5,
+            -17.49999976158142,
+            -17.5
+          ],
+          "size": [
+            4.0,
+            22.000000476837158,
+            22.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "label": "右髋roll",
+      "file": "models/12.stl",
+      "sources": [
+        "hip_l",
+        "seeed_bearing__configuration__22x16x4"
+      ],
+      "components": [
+        {
+          "key": "hip_l",
+          "occurrence": 1,
+          "label": "髋部左",
+          "kind": "打印件",
+          "start": 0,
+          "count": 62910,
+          "center": [
+            11.750000953674316,
+            -24.225025177001953,
+            -17.5
+          ],
+          "size": [
+            34.50000190734863,
+            32.450050354003906,
+            19.0
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 62910,
+          "count": 62910,
+          "center": [
+            4.000000238418579,
+            -40.5,
+            -17.5
+          ],
+          "size": [
+            21.999999523162842,
+            4.0,
+            22.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "label": "右大腿",
+      "file": "models/13.stl",
+      "sources": [
+        "xl330",
+        "seeed_bearing__configuration__22x16x4",
+        "upper_leg_rigidity_plate",
+        "upper_leg_right",
+        "xl330"
+      ],
+      "components": [
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 13 · 右膝 · 屈伸",
+          "kind": "外购 / 占位",
+          "start": 0,
+          "count": 12378,
+          "center": [
+            -31.777099609375,
+            -55.0,
+            -32.0
+          ],
+          "size": [
+            20.0,
+            29.0,
+            34.0
+          ],
+          "servoId": 13,
+          "servoPart": "右膝",
+          "servoAction": "屈伸"
+        },
+        {
+          "key": "seeed_bearing__configuration__22x16x4",
+          "occurrence": 1,
+          "label": "轴承 16×22×4 mm",
+          "kind": "外购 / 占位",
+          "start": 12378,
+          "count": 62910,
+          "center": [
+            -31.777099609375,
+            -40.5,
+            -39.5
+          ],
+          "size": [
+            22.0,
+            4.0,
+            22.0
+          ]
+        },
+        {
+          "key": "upper_leg_rigidity_plate",
+          "occurrence": 1,
+          "label": "上腿加固板",
+          "kind": "打印件",
+          "start": 75288,
+          "count": 10800,
+          "center": [
+            -14.029798030853271,
+            -43.0,
+            -27.998241424560547
+          ],
+          "size": [
+            58.05773639678955,
+            1.0,
+            44.996482849121094
+          ]
+        },
+        {
+          "key": "upper_leg_right",
+          "occurrence": 1,
+          "label": "右上腿",
+          "kind": "打印件",
+          "start": 86088,
+          "count": 36750,
+          "center": [
+            -14.300844192504883,
+            -56.5,
+            -27.86229133605957
+          ],
+          "size": [
+            60.99661636352539,
+            28.0,
+            47.659420013427734
+          ]
+        },
+        {
+          "key": "xl330",
+          "occurrence": 2,
+          "label": "舵机 ID 12 · 右髋 · 俯仰，前后摆腿",
+          "kind": "外购 / 占位",
+          "start": 122838,
+          "count": 12378,
+          "center": [
+            -3.5,
+            -55.0,
+            -17.5
+          ],
+          "size": [
+            34.0,
+            29.0,
+            20.0
+          ],
+          "servoId": 12,
+          "servoPart": "右髋",
+          "servoAction": "俯仰，前后摆腿"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "label": "右小腿",
+      "file": "models/14.stl",
+      "sources": [
+        "xl330",
+        "leg"
+      ],
+      "components": [
+        {
+          "key": "xl330",
+          "occurrence": 1,
+          "label": "舵机 ID 14 · 右踝 · 脚踝",
+          "kind": "外购 / 占位",
+          "start": 0,
+          "count": 12378,
+          "center": [
+            -31.777099609375,
+            -50.0,
+            -74.0
+          ],
+          "size": [
+            20.0,
+            29.0,
+            34.0
+          ],
+          "servoId": 14,
+          "servoPart": "右踝",
+          "servoAction": "脚踝"
+        },
+        {
+          "key": "leg",
+          "occurrence": 1,
+          "label": "腿部",
+          "kind": "打印件",
+          "start": 12378,
+          "count": 44328,
+          "center": [
+            -31.777098655700684,
+            -36.47500038146973,
+            -58.500014305114746
+          ],
+          "size": [
+            20.000001907348633,
+            7.950000762939453,
+            58.00000190734863
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "label": "右踝脚",
+      "file": "models/15.stl",
+      "sources": [
+        "ankle_right",
+        "sole_right",
+        "seeed_bearing__configuration_default",
+        "foot_right"
+      ],
+      "components": [
+        {
+          "key": "ankle_right",
+          "occurrence": 1,
+          "label": "脚踝右",
+          "kind": "打印件",
+          "start": 0,
+          "count": 14928,
+          "center": [
+            -28.1903076171875,
+            -49.9090690612793,
+            -85.05000305175781
+          ],
+          "size": [
+            36.5,
+            39.48914337158203,
+            25.5
+          ]
+        },
+        {
+          "key": "sole_right",
+          "occurrence": 1,
+          "label": "右脚底",
+          "kind": "打印件",
+          "start": 14928,
+          "count": 47664,
+          "center": [
+            -24.77709937095642,
+            -49.804728507995605,
+            -100.07281875610352
+          ],
+          "size": [
+            54.00000047683716,
+            41.09873390197754,
+            12.907600402832031
+          ]
+        },
+        {
+          "key": "seeed_bearing__configuration_default",
+          "occurrence": 1,
+          "label": "轴承 10×15×3 mm",
+          "kind": "外购 / 占位",
+          "start": 62592,
+          "count": 62910,
+          "center": [
+            -31.777099609375,
+            -33.79999923706055,
+            -81.5
+          ],
+          "size": [
+            15.0,
+            3.0,
+            15.0
+          ]
+        },
+        {
+          "key": "foot_right",
+          "occurrence": 1,
+          "label": "右脚",
+          "kind": "打印件",
+          "start": 125502,
+          "count": 59742,
+          "center": [
+            -24.77709972858429,
+            -49.92355918884277,
+            -96.07352066040039
+          ],
+          "size": [
+            53.99999976158142,
+            40.08549880981445,
+            16.909019470214844
+          ]
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "key": "ankle_left",
+      "label": "脚踝左",
+      "file": "parts/00.stl",
+      "original": "ankle_left_脚踝左.stl",
+      "quantity": 1
+    },
+    {
+      "key": "ankle_right",
+      "label": "脚踝右",
+      "file": "parts/01.stl",
+      "original": "ankle_right_脚踝右.stl",
+      "quantity": 1
+    },
+    {
+      "key": "banana_pcb_locker",
+      "label": "香蕉形PCB锁扣",
+      "file": "parts/02.stl",
+      "original": "banana_pcb_locker_香蕉形PCB锁扣.stl",
+      "quantity": 1
+    },
+    {
+      "key": "bearing_roll",
+      "label": "横滚轴承压盖",
+      "file": "parts/03.stl",
+      "original": "bearing_roll_横滚轴承压盖.stl",
+      "quantity": 2
+    },
+    {
+      "key": "bottom_head_shell",
+      "label": "头部下壳",
+      "file": "parts/04.stl",
+      "original": "bottom_head_shell_头部下壳.stl",
+      "quantity": 1
+    },
+    {
+      "key": "face_part",
+      "label": "面部零件",
+      "file": "parts/05.stl",
+      "original": "face_part_面部零件.stl",
+      "quantity": 1
+    },
+    {
+      "key": "foot_left",
+      "label": "左脚",
+      "file": "parts/06.stl",
+      "original": "foot_left_左脚.stl",
+      "quantity": 1
+    },
+    {
+      "key": "foot_right",
+      "label": "右脚",
+      "file": "parts/07.stl",
+      "original": "foot_right_右脚.stl",
+      "quantity": 1
+    },
+    {
+      "key": "hip_l",
+      "label": "髋部左",
+      "file": "parts/08.stl",
+      "original": "hip_l_髋部左.stl",
+      "quantity": 2
+    },
+    {
+      "key": "jaw_soft",
+      "label": "软下巴",
+      "file": "parts/09.stl",
+      "original": "jaw_soft_软下巴.stl",
+      "quantity": 1
+    },
+    {
+      "key": "jaw",
+      "label": "下巴",
+      "file": "parts/10.stl",
+      "original": "jaw_下巴.stl",
+      "quantity": 1
+    },
+    {
+      "key": "left_shell",
+      "label": "左壳",
+      "file": "parts/11.stl",
+      "original": "left_shell_左壳.stl",
+      "quantity": 1
+    },
+    {
+      "key": "leg",
+      "label": "腿部",
+      "file": "parts/12.stl",
+      "original": "leg_腿部.stl",
+      "quantity": 4
+    },
+    {
+      "key": "m12_lens_holder",
+      "label": "M12镜头座",
+      "file": "parts/13.stl",
+      "original": "m12_lens_holder_M12镜头座.stl",
+      "quantity": 1
+    },
+    {
+      "key": "motor_support",
+      "label": "电机支架",
+      "file": "parts/14.stl",
+      "original": "motor_support_电机支架.stl",
+      "quantity": 1
+    },
+    {
+      "key": "neck_pitch",
+      "label": "颈部俯仰",
+      "file": "parts/15.stl",
+      "original": "neck_pitch_颈部俯仰.stl",
+      "quantity": 1
+    },
+    {
+      "key": "neck",
+      "label": "颈部",
+      "file": "parts/16.stl",
+      "original": "neck_颈部.stl",
+      "quantity": 2
+    },
+    {
+      "key": "noenoeil",
+      "label": "眼睛",
+      "file": "parts/17.stl",
+      "original": "noenoeil_眼睛.stl",
+      "quantity": 1
+    },
+    {
+      "key": "power_support",
+      "label": "电源支架",
+      "file": "parts/18.stl",
+      "original": "power_support_电源支架.stl",
+      "quantity": 2
+    },
+    {
+      "key": "right_shell",
+      "label": "右壳",
+      "file": "parts/19.stl",
+      "original": "right_shell_右壳.stl",
+      "quantity": 1
+    },
+    {
+      "key": "soft_mouth_top",
+      "label": "软嘴顶部",
+      "file": "parts/20.stl",
+      "original": "soft_mouth_top_软嘴顶部.stl",
+      "quantity": 1
+    },
+    {
+      "key": "sole_left",
+      "label": "左脚底",
+      "file": "parts/21.stl",
+      "original": "sole_left_左脚底.stl",
+      "quantity": 2
+    },
+    {
+      "key": "sole_right",
+      "label": "右脚底",
+      "file": "parts/22.stl",
+      "original": "sole_right_右脚底.stl",
+      "quantity": 2
+    },
+    {
+      "key": "top_head_shell",
+      "label": "头部上壳",
+      "file": "parts/23.stl",
+      "original": "top_head_shell_头部上壳.stl",
+      "quantity": 1
+    },
+    {
+      "key": "trunk_base",
+      "label": "躯干底座",
+      "file": "parts/24.stl",
+      "original": "trunk_base_躯干底座.stl",
+      "quantity": 1
+    },
+    {
+      "key": "upper_leg_left",
+      "label": "左上腿",
+      "file": "parts/25.stl",
+      "original": "upper_leg_left_左上腿.stl",
+      "quantity": 1
+    },
+    {
+      "key": "upper_leg_right",
+      "label": "右上腿",
+      "file": "parts/26.stl",
+      "original": "upper_leg_right_右上腿.stl",
+      "quantity": 1
+    },
+    {
+      "key": "upper_leg_rigidity_plate",
+      "label": "上腿加固板",
+      "file": "parts/27.stl",
+      "original": "upper_leg_rigidity_plate_上腿加固板.stl",
+      "quantity": 2
+    },
+    {
+      "key": "yaw2roll",
+      "label": "偏航转横滚",
+      "file": "parts/28.stl",
+      "original": "yaw2roll_偏航转横滚.stl",
+      "quantity": 2
+    },
+    {
+      "key": "yaw_roll_motion",
+      "label": "偏航横滚运动",
+      "file": "parts/29.stl",
+      "original": "yaw_roll_motion_偏航横滚运动.stl",
+      "quantity": 1
+    }
+  ],
+  "servos": [
+    {
+      "id": 10,
+      "group": 1,
+      "occurrence": 2,
+      "part": "右髋",
+      "action": "偏航，转腿"
+    },
+    {
+      "id": 11,
+      "group": 11,
+      "occurrence": 1,
+      "part": "右髋",
+      "action": "横滚，侧向摆腿"
+    },
+    {
+      "id": 12,
+      "group": 13,
+      "occurrence": 2,
+      "part": "右髋",
+      "action": "俯仰，前后摆腿"
+    },
+    {
+      "id": 13,
+      "group": 13,
+      "occurrence": 1,
+      "part": "右膝",
+      "action": "屈伸"
+    },
+    {
+      "id": 14,
+      "group": 14,
+      "occurrence": 1,
+      "part": "右踝",
+      "action": "脚踝"
+    },
+    {
+      "id": 20,
+      "group": 1,
+      "occurrence": 1,
+      "part": "左髋",
+      "action": "偏航，转腿"
+    },
+    {
+      "id": 21,
+      "group": 2,
+      "occurrence": 1,
+      "part": "左髋",
+      "action": "横滚，侧向摆腿"
+    },
+    {
+      "id": 22,
+      "group": 4,
+      "occurrence": 2,
+      "part": "左髋",
+      "action": "俯仰，前后摆腿"
+    },
+    {
+      "id": 23,
+      "group": 4,
+      "occurrence": 1,
+      "part": "左膝",
+      "action": "屈伸"
+    },
+    {
+      "id": 24,
+      "group": 5,
+      "occurrence": 1,
+      "part": "左踝",
+      "action": "脚踝"
+    },
+    {
+      "id": 30,
+      "group": 7,
+      "occurrence": 1,
+      "part": "颈部",
+      "action": "俯仰"
+    },
+    {
+      "id": 31,
+      "group": 7,
+      "occurrence": 2,
+      "part": "头部",
+      "action": "俯仰，点头"
+    },
+    {
+      "id": 32,
+      "group": 9,
+      "occurrence": 1,
+      "part": "头部",
+      "action": "偏航，左右转头"
+    },
+    {
+      "id": 33,
+      "group": 10,
+      "occurrence": 2,
+      "part": "头部",
+      "action": "横滚，左右歪头"
+    },
+    {
+      "id": 34,
+      "group": 10,
+      "occurrence": 1,
+      "part": "嘴部",
+      "action": "开合"
+    }
+  ]
+}
