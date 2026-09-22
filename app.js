@@ -1,19 +1,20 @@
 import * as THREE from 'three';
 import {OrbitControls} from './vendor/OrbitControls.js';
 import {STLLoader} from './vendor/STLLoader.js';
-import {lessons} from './lessons.js';
+import {lessons} from './lessons.js?v=head-groups-1';
 import {assemblySteps} from './assembly.js';
-let assemblyIndex=0;
+let assemblyIndex=0,headChapter=0;
+const inChapter=n=>moduleId!==10||headChapter<0||(n.userData.phase>=lessons[10].chapters[headChapter].start&&n.userData.phase<=lessons[10].chapters[headChapter].end);
 const $=id=>document.getElementById(id),host=$('viewport'),loader=new STLLoader();
 let data,renderer,scene,camera,controls,ready=false,moduleId=1,phase=-1,selected=null,partMesh=null,requestId=0,nodes=[],labels=[],animation=null;
 const raycaster=new THREE.Raycaster();
 const materials={print:new THREE.MeshStandardMaterial({color:0xc9d8de,roughness:.7}),hardware:new THREE.MeshStandardMaterial({color:0x63798a,roughness:.4,metalness:.35}),shell:new THREE.MeshStandardMaterial({color:0xb7d6df,transparent:true,opacity:.16,depthWrite:false,roughness:.7}),current:new THREE.MeshStandardMaterial({color:0x25b79c,roughness:.55}),selected:new THREE.MeshStandardMaterial({color:0xf1a73d,roughness:.5})};
-const group=()=>data.groups.find(g=>g.id===moduleId),members=()=>nodes.filter(n=>n.userData.group===moduleId),number=n=>String(n.userData.index+1).padStart(2,'0');
+const group=()=>data.groups.find(g=>g.id===moduleId),members=()=>nodes.filter(n=>n.userData.group===moduleId&&inChapter(n)),number=n=>String(n.userData.index+1).padStart(2,'0');
 function text(tag,value,cls){const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e;}
 function clearPart(){requestId++;if(partMesh){scene.remove(partMesh);partMesh.geometry.dispose();partMesh=null;} $('printReturn').hidden=true;}
 function setModule(id){
  if(id===0){setAssembly(assemblyIndex);return;}
- if(!ready)return;clearPart();$('homeDetail').hidden=true;$('instructions').scrollTop=0;animation=null;moduleId=id;phase=-1;selected=null;
+ if(!ready)return;clearPart();$('homeDetail').hidden=true;$('instructions').scrollTop=0;animation=null;moduleId=id;headChapter=0;phase=-1;selected=null;
  $('greenLegend').textContent='本小步';$('orangeLegend').textContent='选中';$('explodeLabel').textContent='零件展开';$('collapse').textContent='合拢 / 本步归位';$('explode').value=id?70:0;$('isolate').checked=false;$('explode').disabled=!id;$('isolate').disabled=!id;$('labels').disabled=!id;
  document.querySelectorAll('nav button').forEach(b=>{const on=Number(b.dataset.module)===id;b.classList.toggle('active',on);b.setAttribute('aria-current',on?'step':'false');});
  $('moduleDetail').hidden=!id;$('overviewDetail').hidden=!!id;
@@ -28,30 +29,35 @@ function setModule(id){
   renderStages();renderComposition();renderSelected();renderPhase();
  }updateMeshes();rebuildLabels();fitVisible();
 }
+function setHeadChapter(index){headChapter=index;setPhase(-1);if(index<0){$('explode').value=0;updateMeshes();fitVisible();}}
 function renderStages(){
+ $('headGroups').hidden=moduleId!==10;$('headGroups').replaceChildren();
+ if(moduleId===10){for(const [i,ch] of [...lessons[10].chapters.entries(),[-1,{label:'查看完整头部 · 16 件'}]]){const b=text('button',ch.label);b.classList.toggle('active',headChapter===i);b.setAttribute('aria-pressed',String(headChapter===i));b.onclick=()=>setHeadChapter(i);$('headGroups').append(b);}}
+
  $('stageList').replaceChildren();const full=text('button','全部零件拆解');full.onclick=()=>setPhase(-1);full.dataset.phase='-1';$('stageList').append(full);
- lessons[moduleId].stages.forEach((s,i)=>{const b=text('button',`${i+1}. ${s.title}`);b.dataset.phase=i;b.onclick=()=>setPhase(i);$('stageList').append(b);});
+ lessons[moduleId].stages.forEach((s,i)=>{if(moduleId===10&&headChapter>=0&&(i<lessons[10].chapters[headChapter].start||i>lessons[10].chapters[headChapter].end))return;const b=text('button',`${moduleId===10&&headChapter>=0?i-lessons[10].chapters[headChapter].start+1:i+1}. ${s.title}`);b.dataset.phase=i;b.onclick=()=>setPhase(i);$('stageList').append(b);});
 }
 function renderComposition(){
+ if(moduleId===10){$('compositionSummary').textContent=headChapter<0?'完整头部：16 件。点击分组可只看其中 2–4 件。':`${lessons[10].chapters[headChapter].label} · ${members().length} 件 / 头部共 16 件。当前只显示本组，连接位置可在完整头部复核。`; $('sceneLabel').textContent=headChapter<0?'10 · 完整头部':lessons[10].chapters[headChapter].label;}
  $('componentList').replaceChildren();for(const n of members()){const c=n.userData.component,b=document.createElement('button');b.className='component-row';b.dataset.component=n.userData.uid;
  b.append(text('b',number(n),'number'),text('span',`${c.label}${!c.servoId&&group().components.filter(x=>x.key===c.key).length>1?' · '+c.occurrence:''}`),text('small',c.kind==='打印件'?'打印':'外购'));b.onclick=()=>selectComponent(n);$('componentList').append(b);}
 }
-function selectComponent(n){if(partMesh)return;selected=n;if(phase>=0&&n.userData.phase>phase)phase=n.userData.phase;renderPhase();renderSelected();updateMeshes();rebuildLabels();if($('isolate').checked)fitVisible();}
+function selectComponent(n){if(partMesh)return;if(moduleId===10&&!inChapter(n)){headChapter=lessons[10].chapters.findIndex(ch=>n.userData.phase>=ch.start&&n.userData.phase<=ch.end);phase=-1;renderStages();renderComposition();}selected=n;if(phase>=0&&n.userData.phase>phase)phase=n.userData.phase;renderPhase();renderSelected();updateMeshes();rebuildLabels();if($('isolate').checked||moduleId===10)fitVisible();}
 function renderSelected(){
  $('selectedPart').hidden=!selected;document.querySelectorAll('.component-row').forEach(b=>b.classList.toggle('selected',b.dataset.component===selected?.userData.uid));if(!selected)return;
  const c=selected.userData.component;$('selectedName').textContent=`${number(selected)} · ${c.label}`;$('selectedFile').textContent=c.key;$('selectedAdvice').textContent=`属于小步 ${selected.userData.phase+1}：${lessons[moduleId].stages[selected.userData.phase].title}。橙色为此件；“合拢”可看最终连接位置。`;
  const p=data.parts.find(p=>p.key===c.key);$('downloadPart').hidden=!p;if(p){$('downloadPart').href=p.file;$('downloadPart').download=p.original;$('downloadPart').textContent=`下载原始 STL · 整机清单 ×${p.quantity}`;}
 }
-function setPhase(index){if(!moduleId||!ready)return;clearPart();animation=null;phase=index;selected=null;$('isolate').checked=false;$('explode').disabled=false;$('isolate').disabled=false;$('explode').value=index<0?70:65;renderPhase();renderSelected();updateMeshes();rebuildLabels();fitVisible();}
+function setPhase(index){if(!moduleId||!ready)return;clearPart();animation=null;phase=index;if(moduleId===10&&index>=0&&headChapter>=0)headChapter=lessons[10].chapters.findIndex(ch=>index>=ch.start&&index<=ch.end);selected=null;$('isolate').checked=false;$('explode').disabled=false;$('isolate').disabled=false;$('explode').value=index<0?70:65;renderStages();renderComposition();renderPhase();renderSelected();updateMeshes();rebuildLabels();fitVisible();}
 function renderPhase(){
- if(!moduleId)return;const l=lessons[moduleId],s=l.stages[phase];document.querySelectorAll('#stageList button').forEach(b=>{const on=Number(b.dataset.phase)===phase;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
- $('phaseTitle').textContent=s?`${phase+1} / ${l.stages.length} · ${s.title}`:'先认件，再逐步试装';$('phaseAction').textContent=s?s.action:'图中每个编号都是独立零件。点击编号或清单定位；选“小步 1”开始，后续零件会逐步加入，已加入的零件保持归位。';
+ if(!moduleId)return;const l=lessons[moduleId],s=l.stages[phase],chapter=moduleId===10&&headChapter>=0?l.chapters[headChapter]:null;document.querySelectorAll('#stageList button').forEach(b=>{const on=Number(b.dataset.phase)===phase;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
+ $('phaseTitle').textContent=s?`${chapter?phase-chapter.start+1:phase+1} / ${chapter?chapter.end-chapter.start+1:l.stages.length} · ${s.title}`:'先认件，再逐步试装';$('phaseAction').textContent=s?s.action:'图中每个编号都是独立零件。点击编号或清单定位；选“小步 1”开始，后续零件会逐步加入，已加入的零件保持归位。';
  $('checkpoint').textContent=s?s.check:'绿色是当前加入的件，灰色是已归位件，橙色是选中的件。展开只为看清组成，不代表实际插入路径。';$('phaseParts').textContent=s?'本小步：'+members().filter(n=>n.userData.phase===phase).map(n=>`${number(n)} ${n.userData.component.label}`).join('、'):'';
- $('prev').disabled=phase<0;$('next').disabled=phase===l.stages.length-1;$('next').textContent=phase<0?'从第 1 小步开始 →':'下一小步 →';$('stageProgress').textContent=phase<0?`${l.stages.length} 个内部小步`:`已显示 ${members().filter(n=>n.userData.phase<=phase).length} / ${members().length} 件`;
+ $('prev').disabled=phase<0;$('next').disabled=phase===l.stages.length-1;$('next').textContent=phase<0?'开始本组 / 第 1 小步 →':moduleId===10&&headChapter>=0&&phase===lessons[10].chapters[headChapter].end&&phase<15?'下一组 →':'下一小步 →';$('stageProgress').textContent=phase<0?`${chapter?chapter.end-chapter.start+1:l.stages.length} 个内部小步`:`已显示 ${members().filter(n=>n.userData.phase<=phase).length} / ${members().length} 件`;
 }
 function updateMeshes(){
  const amount=Number($('explode').value)/100;if(moduleId===0){updateAssembly(amount);return;}$('explodeValue').textContent=`${Math.round(amount*100)}%`;
- for(const n of nodes){const c=n.userData.component;n.visible=!partMesh&&(!moduleId||n.userData.group===moduleId&&(phase<0||n.userData.phase<=phase));if(moduleId&&selected&&$('isolate').checked)n.visible=n.visible&&n===selected;const moving=moduleId&&(phase<0||n.userData.phase===phase);n.position.copy(n.userData.offset).multiplyScalar(moving?amount:0);n.material=n===selected?materials.selected:$('transparentShell').checked&&c.key.includes('shell')?materials.shell:phase>=0&&moving?materials.current:c.kind==='打印件'?materials.print:materials.hardware;}
+ for(const n of nodes){const c=n.userData.component;n.visible=!partMesh&&(!moduleId||n.userData.group===moduleId&&inChapter(n)&&(phase<0||n.userData.phase<=phase));if(moduleId&&selected&&$('isolate').checked)n.visible=n.visible&&n===selected;const moving=moduleId&&(phase<0||n.userData.phase===phase);n.position.copy(n.userData.offset).multiplyScalar(moving?amount:0);n.material=n===selected?materials.selected:$('transparentShell').checked&&c.key.includes('shell')?materials.shell:phase>=0&&moving?materials.current:c.kind==='打印件'?materials.print:materials.hardware;}
 }
 function rebuildLabels(){
  $('modelLabels').replaceChildren();labels=[];if(partMesh)return;if(!moduleId){assemblyLabels();return;}
@@ -186,6 +192,6 @@ async function start(){try{
  for(const p of data.parts){const b=document.createElement('button');b.append(text('span',p.label),text('small',`×${p.quantity}`));b.onclick=()=>inspectPrint(p);$('partsList').append(b);}
  renderServoTable();renderInventory();$('totalPieces').textContent=`已拆出 ${nodes.length} 个独立模型实例`;ready=true;$('status').textContent='';showHome();
  }catch(e){$('status').textContent='模型载入失败，请刷新；若直接打开 HTML，请使用启动教程.cmd。';console.error(e);}}
-$('prev').onclick=()=>setPhase(Math.max(-1,phase-1));$('next').onclick=()=>{if(moduleId)setPhase(Math.min(lessons[moduleId].stages.length-1,phase+1));};$('overview').onclick=()=>setModule(0);$('printReturn').onclick=()=>setModule(moduleId);
+$('prev').onclick=()=>setPhase(Math.max(-1,phase-1));$('next').onclick=()=>{if(moduleId)setPhase(phase<0&&moduleId===10&&headChapter>=0?lessons[10].chapters[headChapter].start:Math.min(lessons[moduleId].stages.length-1,phase+1));};$('overview').onclick=()=>setModule(0);$('printReturn').onclick=()=>setModule(moduleId);
 $('explode').oninput=()=>{animation=null;updateMeshes();if(moduleId===0&&assemblyIndex===15)fitVisible();};$('explode').onchange=()=>fitVisible();$('transparentShell').onchange=updateMeshes;$('collapse').onclick=()=>{if(ready&&!partMesh){if(moduleId===0)dockAssembly();else animation={start:performance.now(),from:Number($('explode').value)};}};
 $('isolate').onchange=()=>{if(!selected&&moduleId){selected=members().find(n=>n.visible)||members()[0];renderSelected();}updateMeshes();rebuildLabels();fitVisible();};document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{if(ready)fitVisible(b.dataset.view);});$('partsButton').onclick=()=>$('partsDialog').showModal();$('closeParts').onclick=()=>$('partsDialog').close();start();
